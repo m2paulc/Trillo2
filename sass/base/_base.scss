@@ -1,0 +1,24 @@
+@import 'reset';
+
+html {
+    /* for easy calculations when implementing REM to elements
+    this translate to 10px since setting default pixel is never good as it is fixed.
+    we want end-users to be able to increase or decrease measurements for readability
+    1 rem = 10px; 10/16px = 62.5% */
+    font-size: 62.5%;
+    
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    // font-size: 1rem;
+    line-height: 1.6;
+    color: $color-grey-dark-2;
+    padding: 3rem; /* this padding doesn't get inherited throughout */
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 1), rgba($color-primary-dark, .9));
+    background-size: cover;
+    
+    height: 100vh; /*testing purpose only*/
+}

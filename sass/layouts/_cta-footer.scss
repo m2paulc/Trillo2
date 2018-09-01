@@ -1,0 +1,54 @@
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  &__heading {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+
+  &__btn {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    & > * {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      transition: all .2s ease-out;
+    }
+
+    &--visible {
+      padding: 2rem 7.5rem;
+    }
+
+    &--invisible {
+      padding: 2rem 0;
+      position: absolute;
+      left: 0;
+      top: -100%;
+    }
+
+    &:hover {
+      background-image: linear-gradient(to left, $color-primary-light, $color-primary-dark);
+    }
+
+    &:hover &--visible {
+      transform: translateY(100%);
+    }
+
+    &:hover &--invisible {
+      top: 0%;
+    } 
+  }
+}

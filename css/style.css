@@ -155,7 +155,7 @@ body {
     width: 3px;
     background-color: #eb2f64;
     transform: scaleY(0);
-    transition: transform .2s,  width .4s ease-in .2s, background-color .1s; }
+    transition: transform .2s,  width .4s ease-in .2s, background-color .1s; }
   .side-nav__item:hover::before, .side-nav__item--active::before {
     transform: scaleY(1);
     width: 100%; }
@@ -382,3 +382,41 @@ body {
     font-family: sans-serif;
     color: #f4f2f2;
     z-index: 1; }
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center; }
+  .cta__heading {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
+  .cta__btn {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, #FF3366, #BA265D);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; }
+    .cta__btn > * {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      transition: all .2s ease-out; }
+    .cta__btn--visible {
+      padding: 2rem 7.5rem; }
+    .cta__btn--invisible {
+      padding: 2rem 0;
+      position: absolute;
+      left: 0;
+      top: -100%; }
+    .cta__btn:hover {
+      background-image: linear-gradient(to left, #FF3366, #BA265D); }
+    .cta__btn:hover .cta__btn--visible {
+      transform: translateY(100%); }
+    .cta__btn:hover .cta__btn--invisible {
+      top: 0%; }

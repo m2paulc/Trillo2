@@ -2,6 +2,10 @@
   padding: 3.5rem 0;
   text-align: center;
 
+  @include responsiveness(medium) {
+        padding: 2rem 0;
+    }
+
   &__heading {
     font-size: 1.6rem;
     font-weight: 300;

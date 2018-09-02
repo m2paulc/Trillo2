@@ -4,6 +4,14 @@
     background-color: $color-grey-light-1;
     border-bottom: 1px solid $color-grey-light-2;
     font-size: 1.4rem;
+
+    @include responsiveness(medium) {
+        padding: 2rem;
+    }
+
+    @include responsiveness(small) {
+        flex-direction: column;
+    }
 }
 
 .description {
@@ -12,6 +20,16 @@
     flex: 0 0 60%;
     margin-right: 4.5rem;
     padding: 3rem;
+
+    @include responsiveness(medium) {
+        margin-right: 2rem;
+        padding: 1.5rem;
+    }
+
+    @include responsiveness(small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
 }
 
 .description__paragraph {
@@ -41,24 +59,18 @@
         width: 1rem;
         margin-right: .5rem;
         
-        /* older browsers 
+        /* for older browsers that doesn't support mask image */
         background-image: url(../img/chevron-thin-right.svg);
         background-size: cover;
-        */
-        
-        /*mask properties
-        background-color: $color-primary;
-        -webkit-mask-image:  url(../img/chevron-thin-right.svg);
-        -webkit-mask-size: cover;
-        mask-image:  url(../img/chevron-thin-right.svg);
-        mask-size: cover;
-        */
-        
-        background-color: $color-primary;
-        -webkit-mask-image:  url(../img/SVG/checkmark.svg);
-        -webkit-mask-size: cover;
-        mask-image:  url(../img/SVG/checkmark.svg);
-        mask-size: cover;
+
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: $color-primary;
+            -webkit-mask-image: url(../img/SVG/checkmark.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../img/SVG/checkmark.svg);
+            mask-size: cover;
+            background-image: none;
+        }
     }
 }
 
@@ -73,7 +85,7 @@
     }
     
     &__images {
-        
+        display: flex;
     }
     
     &__photo {
